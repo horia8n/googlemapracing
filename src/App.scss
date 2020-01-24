@@ -1,0 +1,759 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/googlemapracing/fonts/Roboto-Regular.ttf");
+}
+
+$WidgetsBg: rgba(128, 112, 99, 0.7);
+$WidgetsBorder: rgb(45, 44, 38);
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  height: 100%;
+}
+
+.container {
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.bikeridepage {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto;
+  .mapswrapper {
+    display: inline-block;
+    width: calc(100% - 400px);
+    height: 100%;
+    position: relative;
+    vertical-align: top;
+    .moto {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      .wrapper {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+      }
+      .dash {
+        position: absolute;
+        bottom: 0;
+        left: 330px;
+        width: 600px;
+        height: 111px;
+        z-index: 102;
+        color: #ffff00;
+        background-color: $WidgetsBg;
+        border: 1px solid $WidgetsBorder;
+        padding-top: 6px;
+        font-size: 30px;
+        text-shadow: 1px 2px #222;
+        font-weight: bolder;
+        .HeadingGearsSpeed {
+          display: block;
+          //height: 100px;
+          padding-bottom: 3px;
+          width: 100%;
+          .HeadingCard {
+            display: inline-block;
+            border-right: 1px solid #222;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+            width: 70px;
+          }
+          .SuperShiftSpeed {
+            border-right: 1px solid #222;
+            color: #ffff00;
+            display: inline-block;
+            text-align: center;
+            width: 200px;
+          }
+          .ShiftSpeed {
+            border-right: 1px solid #222;
+            color: #ffff00;
+            display: inline-block;
+            text-align: center;
+            width: 170px;
+          }
+          .SimKMHSpeed {
+            color: #ffff00;
+            display: inline-block;
+            font-size: 40px;
+            text-align: right;
+            text-shadow: 1px 2px #222;
+            width: 100px;
+          }
+          .SimKMHSpeedkmh {
+            color: #ffff00;
+            display: inline-block;
+            font-size: 10px !important;
+            font-weight: bold !important;
+            text-shadow: 1px 2px #222;
+          }
+        }
+        .RpmAudioVolume {
+          display: block;
+          width: 100%;
+          .RPM {
+            display: inline-block;
+            width: 459px;
+            margin-left: 20px;
+          }
+          .AudioVolume {
+            display: inline-block;
+            font-size: 16px;
+            width: 108px;
+            margin-left: 10px;
+            label {
+              display: block;
+              width: 108px;
+              margin-bottom: 6px;
+            }
+            input {
+              display: block;
+              width: 99px;
+            }
+          }
+        }
+      }
+      .settings {
+        position: absolute;
+        bottom: 296px;
+        left: 0;
+        width: 331px;
+        height: 300px;
+        z-index: 105;
+        color: #ffff00;
+        background-color: $WidgetsBg;
+        border: 1px solid $WidgetsBorder;
+        padding: 11px 0 8px 8px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 900;
+        text-shadow: 1px 2px #222;
+        .settings_block {
+          .setting {
+            display: inline-block;
+            margin-bottom: 17px;
+            width: 150px;
+            margin-right: 10px;
+            label {
+              display: block;
+              width: 100%;
+              margin-bottom: 2px;
+
+            }
+            input {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .statsTable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 111px;
+        z-index: 102;
+        color: #ffff00;
+        font-size: 12px;
+        background-color: $WidgetsBg;
+      }
+    }
+    .map {
+      display: block;
+      position: absolute;
+      border: 1px solid $WidgetsBorder;
+      &.topview {
+        &.MapCenter {
+          width: 100%;
+          height: 100%;
+          z-index: 101;
+        }
+        &.MapSmallBottoLeft {
+          bottom: 0;
+          left: 0;
+          width: 200px;
+          height: 200px;
+          z-index: 102;
+        }
+        &.MapSmallBottoRight {
+          bottom: 0;
+          right: 0;
+          width: 200px;
+          height: 200px;
+          z-index: 102;
+        }
+        .settings {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 115px;
+          height: 50px;
+          z-index: 105;
+          color: #ffff00;
+          background-color: $WidgetsBg;
+          border: 1px solid $WidgetsBorder;
+          padding: 8px;
+          text-align: left;
+          font-size: 12px;
+          font-weight: 900;
+          .settings_block {
+            margin-bottom: 12px;
+            .setting {
+              display: block;
+              margin-bottom: 6px;
+              width: 100%;
+              label {
+                display: block;
+                width: 100%;
+                margin-bottom: 2px;
+
+              }
+              input {
+                display: block;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.streetview {
+        top: 0;
+        width: 50%;
+        height: 30%;
+        z-index: 102;
+        &.camBlue {
+          border: 6px solid #0a8dff;
+        }
+        &.camRed {
+          right: 0;
+          border: 6px solid #ff4646;
+        }
+        .settings {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 115px;
+          height: 50px;
+          z-index: 105;
+          color: #ffff00;
+          background-color: $WidgetsBg;
+          border: 1px solid $WidgetsBorder;
+          padding: 8px;
+          text-align: left;
+          font-size: 12px;
+          font-weight: 900;
+          .settings_block {
+            margin-bottom: 12px;
+            .setting {
+              display: block;
+              margin-bottom: 6px;
+              width: 100%;
+              label {
+                display: block;
+                width: 100%;
+                margin-bottom: 2px;
+
+              }
+              input {
+                display: block;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .map_wrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .googleMap {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 102;
+        }
+        .black_screen {
+          display: none;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 103;
+          background-color: #000;
+          animation: fadeOut ease-in 3s forwards;
+        }
+        .no_touch {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 104;
+        }
+      }
+    }
+    .showcase {
+      display: block;
+      position: absolute;
+      border: 1px solid $WidgetsBorder;
+      background-color: $WidgetsBg;
+      text-shadow: 1px 2px #222;
+      &.showcase0 {
+        width: 221px;
+        height: 221px;
+        z-index: 103;
+        bottom: 76px;
+        left: 0;
+      }
+      &.showcase1 {
+        width: 111px;
+        height: 111px;
+        z-index: 104;
+        bottom: 186px;
+        left: 220px;
+      }
+      &.showcase2 {
+        width: 111px;
+        height: 111px;
+        z-index: 104;
+        bottom: 76px;
+        left: 220px;
+      }
+      .showcase_wrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .showcase_component {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: #ffff00;
+          font-size: 10px;
+          padding: 0 8px;
+          &.showcase_img {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: 0;
+          }
+          &.showcase_angle {
+            top: 2px;
+            left: 0;
+          }
+          &.showcase_step {
+            top: 14px;
+            left: 0;
+          }
+        }
+      }
+    }
+    .showcasepattern {
+      display: block;
+      position: absolute;
+      border: 1px solid $WidgetsBorder;
+      background-color: $WidgetsBg;
+      width: 331px;
+      height: 76px;
+      z-index: 104;
+      bottom: 1px;
+      left: 0;
+      .title {
+        color: #ffff00;
+        font-size: 10px;
+        padding: 3px 8px 0;
+        text-shadow: 1px 2px #222;
+      }
+      .showcase_wrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 60px;
+        img {
+          display: inline-block;
+          width: 60px;
+          margin-right: -13px;
+          margin-left: -7px;
+          margin-bottom: -7px;
+          height: auto;
+        }
+      }
+    }
+    .timer {
+      position: absolute;
+      bottom: 198px;
+      right: 0;
+      color: #ffff00;
+      background-image: linear-gradient(90deg, rgba(138, 164, 177, .5), rgba(135, 159, 173, .6), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .7), rgba(135, 159, 173, .6), rgba(138, 164, 177, .5));
+      //background-color: #eee;
+      border: 1px solid #000;
+      z-index: 102;
+      font-size: 26px;
+      font-weight: 800;
+      padding: 6px 10px;
+      width: 200px;
+    }
+    .keysInstructions {
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 290px;
+      left: 0;
+      bottom: 200px;
+      z-index: 103;
+      color: #fff;
+      border: 1px solid #000;
+      background-color: $WidgetsBg;
+      .inner {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .middle {
+          display: block;
+          position: absolute;
+          width: 150px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: 900;
+          font-size: 18px;
+          text-shadow: 0 0 10px #000;
+          .but {
+            display: inline-block;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+            margin-right: 30px;
+            padding: 3px 0 0px 0;
+            text-align: center;
+            box-shadow: 0 0 10px 0 #000;
+          }
+          .text{
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+  .SidePanel {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 10px;
+    width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    direction: ltr;
+    border: #bbb;
+    .road {
+      display: block;
+      width: 100%;
+      height: 80px;
+      opacity: 0.3;
+      cursor: pointer;
+      border-top: 1px solid #333;
+      &:hover {
+        opacity: 1;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 800;
+        color: #FF0000;
+      }
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 3px;
+    }
+    .DirectionsPanel {
+      .step {
+        margin: 0 0 3px 0;
+        display: block;
+        background-color: #eee;
+        table {
+          width: 100%;
+          tr {
+            border: 1px solid #fff;
+          }
+          td {
+            font-size: 18px;
+            //background-image: url('img/mapDirPanelDay.png');
+            color: #000;
+          }
+          .imgTD {
+            width: 32px;
+            vertical-align: top;
+          }
+          .status {
+            width: 32px;
+            height: auto;
+            vertical-align: top;
+          }
+          .txtTD {
+            width: 100%;
+            height: 77px;
+            text-align: left;
+            vertical-align: top;
+            //background-image: url('img/mapDirPanelDay.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: left top;
+            text-shadow: 1px 2px 2px #ddd;
+            color: #4400aa;
+          }
+          .durTD {
+            text-align: right;
+            width: 100%;
+            text-align: left;
+            //background-image: url('img/mapDirPanelDay.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: left top;
+            border-width: 0px;
+            height: 22px;
+            font-size: 12px;
+            font-weight: 600;
+            text-shadow: 1px 1px 1px #ddd;
+            color: #444;
+            .timeTD {
+              text-align: right;
+              width: 75px;
+              display: inline-block;
+            }
+            .distTD {
+              text-align: right;
+              width: 95px;
+              margin-left: 10px;
+              display: inline-block;
+            }
+            .percTD {
+              text-align: right;
+              width: 40px;
+              margin-left: 9px;
+              display: inline-block;
+            }
+          }
+          .leftTD {
+            text-align: right;
+            width: 95px;
+            margin-left: 8px;
+            display: inline-block;
+          }
+          .minibarTD {
+            text-align: left;
+            ////background-image: url('img/mapDirPanelDay.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: left top;
+            height: 6px;
+            border: 0px solid #888;
+            img {
+              width: 0%;
+              height: 6px;
+              border: 0px solid #eee;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+#muteMusicButton{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 40px;
+  text-align: center;
+  width:100px;
+  text-shadow: 2px 6px 10px #505050;
+  z-index: 102;
+  cursor: pointer;
+  color: #111;
+  border: 1px solid #111;
+  opacity: 0.7;
+  &:hover{
+    opacity: 1;
+  }
+  &.off{
+    text-decoration: line-through;
+  }
+  &.on{
+    text-decoration: none;
+  }
+}
+
+.scene {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  .GoogleMapRacingTitle{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    top: 30%;
+    font-size: 70px;
+    text-align: center;
+    width:40%;
+    text-shadow: 2px 6px 10px #505050;
+    font-weight: 600;
+  }
+  .pickVehicleWrap {
+    position: absolute;
+    bottom: 27%;
+    &.Moto {
+      left: 125px;
+    }
+    &.DirtBike {
+      right: 125px;
+    }
+  }
+  .pickVehicle {
+    display: inline-block;
+    width: 221px;
+    height: 221px;
+    //border: 1px solid #aaa;
+    margin: 5px 5px 5px 15px;
+    position: relative;
+
+    &.Moto {
+      .motocycle {
+        width: 201px;
+        top: 121px;
+      }
+    }
+    &.DirtBike {
+      .motocycle {
+        width: 221px;
+        top: 106px;
+      }
+    }
+    .motocycle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: auto;
+      transform: translateY(-50%) translateX(-50%);
+      filter: drop-shadow(8px -4px 10px #333) brightness(60%);
+    }
+    .stats {
+      position: absolute;
+      //left: 50%;
+      top: -220px;
+      //width: 255px;
+      //transform: translateY(-50%) translateX(-50%);
+      border: 1px solid rgba(138,164,177,.06);
+      padding: 10px 20px;
+      color: #222;
+      background-image: linear-gradient(90deg,rgba(138,164,177,.02),rgba(138,164,177,.01),rgba(138,164,177,.02));
+      box-shadow: 2px 2px 14px #585858;
+      td {
+        width: 80px;
+        height: 25px;
+        text-shadow: 2px 2px 10px;
+        font-size: 15px;
+        &:last-child{
+          text-align: right;
+        }
+      }
+      .title {
+        font-size: 36px;
+        color: #6e0000;
+        margin-bottom: 10px;
+        text-shadow: 2px 6px 10px;
+      }
+    }
+    .piedestal {
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 400px;
+      height: auto;
+      transform: translateY(-50%) translateX(-50%);
+      filter: drop-shadow(0 -3px 10px #333);
+    }
+    &:hover {
+      cursor: pointer;
+      .piedestal {
+        filter: brightness(130%) drop-shadow(8px -5px 30px #aaa);
+      }
+      .motocycle {
+        filter: drop-shadow(8px -4px 16px #000) brightness(110%);
+      }
+      .title {
+        color: #eb0000;
+      }
+      &.Moto {
+        .stats {
+          td {
+            color: #ffff00;
+            text-shadow: 2px 6px 30px;
+          }
+        }
+      }
+      &.DirtBike {
+        .stats {
+          td {
+            color: #00ff00;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
